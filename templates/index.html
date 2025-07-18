@@ -499,8 +499,9 @@
               </button>
             </form>
 
+            <a id="result-anchor"></a>
             {% if fuel and co2 %}
-            <div id="results" class="hidden mt-4">
+            <div id="results" class="mt-4">
               <h3 class="mb-4 text-center">Prediction Results</h3>
               <div class="row">
                 <div class="col-md-6 mb-4">
@@ -525,6 +526,14 @@
                 </div>
               </div>
             </div>
+            <script>
+              window.addEventListener('load', function () {
+                const resultSection = document.getElementById("results");
+                if (resultSection) {
+                  resultSection.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+              });
+            </script>
             {% endif %}
           </div>
         </div>
@@ -601,12 +610,12 @@
               <button type="submit" class="btn predict-btn">Send Message</button>
             </form>
             <div class="row mt-3">
-                <div class="col-12">
-                  <div class="alert alert-success">
-                    <p id="statusMessage" style="text-align: center;"></p>
-                  </div>
+              <div class="col-12">
+                <div class="alert alert-success">
+                  <p id="statusMessage" style="text-align: center;"></p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
