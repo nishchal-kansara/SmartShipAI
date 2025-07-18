@@ -28,6 +28,12 @@ Our goal is to bring awareness to the environmental impact of ships, which is of
 1. YouTube: []()
 2. Web Demo: [https://smartshipai.onrender.com](https://smartshipai.onrender.com)
 
+# Screenshots
+<img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/48b3f701-5b79-4046-815f-cb7d8111d1e3" />
+<img width="1920" height="1343" alt="image" src="https://github.com/user-attachments/assets/e2396c9e-41e0-4edc-b1b9-2b90bd41fdee" />
+<img width="1421" height="809" alt="image" src="https://github.com/user-attachments/assets/231e5120-1b6e-4573-ad5c-8666a579acaa" />
+
+
 # Team (S4F CP Team 33694)
 1. Nishchal Kansara (Team Lead): [https://www.linkedin.com/in/nishchal-kansara/](https://www.linkedin.com/in/nishchal-kansara/)
 2. Krishi Shah: [https://www.linkedin.com/in/krishi-shah-16a934345/](https://www.linkedin.com/in/krishi-shah-16a934345/)
