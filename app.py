@@ -39,7 +39,8 @@ def predict():
         co2_emission = round(prediction[1], 2)
 
         # Initialize the Generative AI model
-        ai_model = genai.GenerativeModel("gemini-2.0-flash")
+        # ai_model = genai.GenerativeModel("gemini-2.0-flash")
+        ai_model = genai.GenerativeModel("gemini-2.5-pro")
 
         # Map numerical values to human-readable labels
         ship_map = {0: 'Fishing Trawler', 1: 'Oil Service Boat', 2: 'Surfer Boat', 3: 'Tanker Ship'}
