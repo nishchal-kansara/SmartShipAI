@@ -1,10 +1,16 @@
 // Initialize distance slider
-const distanceSlider = document.getElementById('distance');
-const distanceValue = document.getElementById('distanceValue');
+function syncDistance(value) {
+    document.getElementById("distanceValue").innerText = value + " km";
+    document.getElementById("distanceInput").value = value;
+}
 
-distanceSlider.addEventListener('input', function () {
-    distanceValue.textContent = this.value + ' km';
-});
+function syncDistanceInput(value) {
+    const slider = document.getElementById("distance");
+    if (value >= 5 && value <= 1000) {
+        slider.value = value;
+        document.getElementById("distanceValue").innerText = value + " km";
+    }
+}
 
 // Animation on scroll
 document.addEventListener('DOMContentLoaded', function () {
@@ -50,29 +56,6 @@ window.addEventListener('scroll', function () {
         navbar.style.boxShadow = 'none';
     }
 });
-
-// const form = document.getElementById('contactForm');
-// const statusMessage = document.getElementById('statusMessage');
-
-// form.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-
-//     const formData = new FormData(form);
-
-//     const response = await fetch('https://flask-mail-ft2p.onrender.com/submit', {
-//         method: 'POST',
-//         body: formData
-//     });
-
-//     if (response.ok) {
-//         statusMessage.textContent = "Your message has been sent successfully!";
-//         statusMessage.style.color = "#28A745";
-//         form.reset();
-//     } else {
-//         statusMessage.textContent = "Oops! Something went wrong.";
-//         statusMessage.style.color = "#D2042D";
-//     }
-// });
 
 const form = document.getElementById('contactForm');
 const statusMessage = document.getElementById('statusMessage');
