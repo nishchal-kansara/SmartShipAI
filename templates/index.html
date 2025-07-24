@@ -14,9 +14,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-ship me-2"></i>Smart<span>Ship</span>AI
-      </a>
+      <a class="navbar-brand" href="#"><i class="fas fa-ship me-2"></i>Smart<span>Ship</span>AI</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,6 +28,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#team">Team</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact Us</a>
@@ -72,10 +73,13 @@
               <!-- Distance Slider -->
               <div class="form-group">
                 <label for="distance">Distance (Km)</label>
-                <div class="slider-container">
-                  <input type="range" class="form-range" id="distance" name="distance" min="5" max="1000" value="20">
-                  <div class="slider-value" id="distanceValue">20 km</div>
+                <div class="slider-container d-flex align-items-center">
+                  <input type="range" class="form-range me-3" id="distance" name="distance" min="5" max="1000"
+                    value="20" oninput="syncDistance(this.value)">
+                  <input type="number" id="distanceInput" min="5" max="1000" value="20" class="form-control"
+                    style="width: 100px;" oninput="syncDistanceInput(this.value)">
                 </div>
+                <div class="slider-value mt-1" id="distanceValue">20 Km</div>
               </div>
 
               <div class="row mt-4">
@@ -134,9 +138,7 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn predict-btn">
-                <i class="fas fa-calculator me-2"></i>Predict
-              </button>
+              <button type="submit" class="btn predict-btn"><i class="fas fa-calculator me-2"></i>Predict</button>
             </form>
 
             <a id="result-anchor"></a>
@@ -164,11 +166,11 @@
                     <p>carbon footprint</p>
                   </div>
                 </div>
-                <div class="row mt-3">
-                  <div class="col-12">
-                    <div class="alert alert-success">
-                      {{ analysis|safe }}
-                    </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12">
+                  <div class="alert alert-success">
+                    {{ analysis|safe }}
                   </div>
                 </div>
               </div>
@@ -188,7 +190,6 @@
     </div>
   </section>
 
-
   <!-- About Section -->
   <section id="about" class="section">
     <div class="container">
@@ -196,20 +197,24 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <div class="about-content animate-up delay-1">
-            <h4 class="mb-4">Project Overview</h4>
-            <p>This project aims to predict how much fuel ships consume and how much CO₂ they emit using AI. By
-              leveraging advanced data analytics and machine learning, we aim to provide insights into fuel efficiency,
-              environmental impacts, and optimization strategies for maritime operations.</p>
-            <p>We chose this project because shipping is a major but less-noticed contributor to global pollution.
-              Everyone talks about cars or factories, but ships also emit huge amounts of carbon. And no one is really
-              using AI to solve this in a simple, predictive way.</p>
-            <p><strong>“Shipping is responsible for nearly 3% of global CO₂ emissions. It's less explored in AI
-                projects.”</strong></p>
+            <h4 class="mb-3">Problem Statement</h4>
+            <p>The shipping industry is a major source of global CO2 emissions, yet there are no simple AI tools to predict or manage fuel usage and pollution.</p>
+            <p>Most decisions are made without considering environmental impact, leading to fuel waste and high emissions.</p>
+            <p>The shipping industry is a major part of global trade, but it also causes serious environmental issues:
+            </p>
+            <ol>
+              <li>Ships consume massive amounts of fuel.</li>
+              <li>This leads to high CO2 emissions and ocean pollution.</li>
+              <li>Most companies have no proper system to track or predict how much fuel, or emissions happen during a trip.</li>
+            </ol>
+
+            <h4 class="mt-5 mb-3">Project Overview</h4>
+            <p>The SmartShipAI aims to predict how much fuel ships consume and how much CO₂ they emit using AI. By leveraging advanced data analytics and machine learning, we aim to provide insights into fuel efficiency, environmental impacts, and optimization strategies for maritime operations.</p>
+            <p>We chose SmartShipAI because shipping is a major but less-noticed contributor to global pollution. Everyone talks about cars or factories, but ships also emit huge amounts of carbon. And no one is really using AI to solve this in a simple, predictive way.</p>
+            <p><strong>"Shipping is responsible for nearly 3% of global CO₂ emissions. It's less explored in AI projects."</strong></p>
 
             <h4 class="mt-5 mb-3">Wow Factor in Solution</h4>
-            <p>We are not just analyzing data - we're using AI to build a smart, predictive model that helps the
-              maritime industry reduce fuel use and CO₂ emissions. The wow factor lies in how we combine environmental
-              impact with real-world machine learning to create a scalable solution for green shipping.</p>
+            <p>We are not just analyzing data - we're using AI to build a smart, predictive model that helps the maritime industry reduce fuel use and CO₂ emissions. The wow factor lies in how we combine environmental impact with real-world machine learning to create a scalable solution for green shipping.</p>
 
             <ol>
               <li>Dual prediction of both fuel consumption and CO₂ emissions.</li>
@@ -220,9 +225,50 @@
             </ol>
 
             <h4 class="mt-5 mb-3">Our Mission</h4>
-            <p>Our mission is to empower shipping companies with accurate, AI-driven predictions that help reduce fuel
-              consumption, lower operational costs, and minimize environmental impact. By making these tools accessible
-              and user-friendly, we aim to drive the maritime industry toward a more sustainable future.</p>
+            <p>Our mission is to empower shipping companies with accurate, AI-driven predictions that help reduce fuel consumption, lower operational costs, and minimize environmental impact. By making these tools accessible and user-friendly, we aim to drive the maritime industry toward a more sustainable future.</p>
+
+            <h4 class="mt-5 mb-3">Conclusion</h4>
+            <p>The SmartShipAI is designed to help the maritime industry become smarter and more eco-friendly. By using machine learning, our model accurately predicts a ship's fuel consumption and CO₂ emissions based on real factors like ship type, fuel type, distance, weather, and month. This helps shipping companies plan better, reduce fuel waste, and cut down harmful emissions.</p>
+            <p>Our goal is to bring awareness to the environmental impact of ships, which is often ignored compared to cars and factories. With this tool, ports, logistics teams, and government agencies can make informed decisions to improve sustainability in shipping. Overall, SmartShipAI is a simple yet powerful solution that supports green technology and smarter transport using artificial intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="section">
+    <div class="container">
+      <h2 class="section-title animate-up">Team Greenovators</h2>
+      <div class="mt-4">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="result-card">
+              <div class="result-icon mb-3">
+                <i class="fa-solid fa-user fa-2x"></i>
+              </div>
+              <h4>Nishchal Kansara</h4>
+              <p>(Team Lead)</p>
+              <p><a href="https://github.com/nishchal-kansara"><i class="fa-brands fa-github" style="font-size: 24px; color: white;"></i></a> <a href="https://www.linkedin.com/in/nishchal-kansara/"><i class="fa-brands fa-linkedin" style="font-size: 24px; color: white;"></i></a></p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="result-card">
+              <div class="result-icon mb-3">
+                <i class="fa-solid fa-user fa-2x"></i>
+              </div>
+              <h4>Krishi Shah</h4>
+              <p><a href="https://github.com/Krishishah7"><i class="fa-brands fa-github" style="font-size: 24px; color: white;"></i></a> <a href="https://www.linkedin.com/in/krishi-shah-16a934345/"><i class="fa-brands fa-linkedin" style="font-size: 24px; color: white;"></i></a></p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="result-card">
+              <div class="result-icon mb-3">
+                <i class="fa-solid fa-user fa-2x"></i>
+              </div>
+              <h4>Harsh Chauhan</h4>
+              <p><a href="https://github.com/HarshChauhan03"><i class="fa-brands fa-github" style="font-size: 24px; color: white;"></i></a> <a href="https://www.linkedin.com/in/chauhanharsh04312/"><i class="fa-brands fa-linkedin" style="font-size: 24px; color: white;"></i></a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -271,11 +317,10 @@
   <!-- Footer -->
   <footer>
     <div class="copyright">
-      <p>&copy; 2025 SmartShipAI</p>
-      <p>Designed & Developed By Greenovators</p>
+      <p>&copy; 2025 SmartShipAI | Designed & Developed By Team Greenovators</p>
+      <p><a href="https://github.com/nishchal-kansara/SmartShipAI"><i class="fa-brands fa-github" style="font-size: 24px; color: white;"></i></a> <a href="https://youtu.be/jDlUi3ek7Ng"><i class="fa-brands fa-youtube" style="font-size: 24px; color: white;"></i></a></p>
     </div>
   </footer>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/static/main.js"></script>
