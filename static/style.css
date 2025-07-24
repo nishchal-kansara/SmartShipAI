@@ -6,8 +6,16 @@
   --dark: #0a1a2a;
 }
 
+@font-face {
+  font-family: "circular-std";
+  src: url("https://nishchal-kansara.web.app/assets/fonts/circular-std.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "circular-std", sans-serif;
   background: linear-gradient(rgba(10, 26, 42, 0.85), rgba(10, 26, 42, 0.95)),
     url("/static/ship.jpg") no-repeat center center fixed;
   background-size: cover;
