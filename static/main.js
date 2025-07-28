@@ -88,3 +88,6 @@ form.addEventListener('submit', async (e) => {
         statusMessage.textContent = "An error occurred. Please try again.";
     }
 });
+
+// Trigger background call silently
+fetch("https://flask-mail-ft2p.onrender.com/", { method: "GET", mode: "no-cors" });
